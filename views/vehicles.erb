@@ -1,8 +1,13 @@
-<h1>Vehicles</h1>
+<h1>Success</h1>
 
 <h3>Here are the vehicles on this lot: </h3>
 <ul>
-  <% @vehicles.each() do |vehicle| %>
-  <li><a href="/vehicles/<%= vehicle.id() %>"><%= vehicle.model() %></a></li>
+  <% @dealership.cars().each() do |car| %>
+  <li> <%= car.make() %> <%= car.model() %> <%= car.year() %></li>
   <% end %>
 </ul>
+<br>
+
+<a href="/dealerships/<%= @dealership.id %>/vehicles/new">Add another new vehicle</a>
+
+<a href="/">Return to Main Page</a>
